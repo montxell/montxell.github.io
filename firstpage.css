@@ -14,6 +14,12 @@ body {
   margin-left: 40px;
 }
 
+img {
+  width: 225;
+  vertical-align: middle;
+  margin: 10 20;  /*equivalent in html vspace="10" and hspace="20"*/
+}
+
 .main {
   font-size: 18px;
   margin-left: 25px;
@@ -21,8 +27,11 @@ body {
   margin-bottom: 40px;
 }
 
-h1 {
+.title-main {
   display: inline-block;
+}
+
+h1 {
   font-size: 28px;
   color: #ffffff;
   background-color: #153450;
@@ -54,6 +63,10 @@ p {
   margin-top: 30px;
 }
 
+.main p {
+  text-align: justify;
+}
+
 .title-paragraph {
   color: #ffffff;
   background-color: #447294;
@@ -61,7 +74,7 @@ p {
   border-radius: 3px;
 }
 
-.highlight {
+.highlight, .ul-highlight span {
   font-weight: bold;
   color: #447294;
 }
