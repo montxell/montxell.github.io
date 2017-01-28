@@ -35,26 +35,6 @@ body {
   align-items: flex-start;
 }
 
-
-@media(max-width: 768px) {
-
-  .nav {
-    justify-content: center;
-  }
-
-  .nav img {
-    width: 50px;
-  }
-
-  .title span {
-    font-size: 25px;
-  }
-
-  .social-menu, .register {
-    display: none;
-  }
-}
-
 /* End Nav */
 
 
@@ -107,38 +87,17 @@ a {
   color: #ffffff;
 }
 
-
-@media(max-width: 768px) {
-
-  .principal-menu {
-    display: none;
-  }
-
-  .header-title {
-    font-size: 18px;
-    text-align: center;
-    height: auto;
-  }
-
-}
-
 /* End Header */
 
 
 /* Start Image Section */
 
-.image-section img {
-  width: 100%;
+.image-section {
+  background-image: url(http://demo.tagdiv.com/newspaper_health/wp-content/uploads/2015/08/15-696x464.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
   height: 400px;
-}
-
-
-@media(max-width: 768px) {
-
-  .image-section img {
-    height: 200px;
-  }
-
 }
 
 /* End Image Section */
@@ -157,7 +116,7 @@ a {
   margin-bottom: 20px;
 }
 
-h2 {
+.main h2 {
   color: #AACD4B;
   font-size: 20px;
   font-weight: bold;
@@ -165,7 +124,7 @@ h2 {
   border-bottom: 2px solid #AACD4B;
 }
 
-h3 {
+.main h3 {
   font-size: 18px;
   font-weight: bold;
   color: #000000;
@@ -185,31 +144,6 @@ h3 {
   margin-top: 10px;
   margin-bottom: 10px;
   width: 50%;
-}
-
-
-@media(max-width: 768px) {
-
-  h2 {
-    font-size: 18px;
-  }
-
-  h3 {
-    font-size: 16px;
-  }
-
-  .most-popular, .must-read {
-    flex-direction: column;
-  }
-
-  .paragraph {
-    width: 100%;
-  }
-
-  .paragraph p {
-    font-size: 14px;
-  }
-
 }
 
 /* End Main */
@@ -241,11 +175,87 @@ h3 {
   padding-right: 15px;
 }
 
+/* End Footer */
+
+
+
 @media(max-width: 768px) {
+
+/* Start Nav */
+
+	.nav {
+	  justify-content: center;
+	}
+
+	.nav img {
+	  width: 50px;
+	}
+
+	.title span {
+	  font-size: 25px;
+	}
+
+	.social-menu, .register {
+	  display: none;
+	}
+
+	.principal-menu {
+		display: none;
+	}
+
+/* End Nav */
+
+
+/* Start Header */
+
+	.header-title {
+		font-size: 18px;
+		text-align: center;
+		height: auto;
+	}
+
+/* End Header */
+
+
+/* Start Image Section */
+
+	.image-section {
+		height: 200px;
+	}
+
+/* End Image Section */
+
+/* Start Main */
+
+	.main h2 {
+		font-size: 18px;
+	}
+
+	.main h3 {
+		font-size: 16px;
+	}
+
+	.most-popular, .must-read {
+		flex-direction: column;
+	}
+
+	.paragraph {
+		width: 100%;
+	}
+
+	.paragraph p {
+		font-size: 14px;
+		margin-right: 15px;
+	}
+
+/* End Main */
+
+/* Start Footer */
 
   .footer {
     font-size: 12px;
   }
-}
 
 /* End Footer */
+
+}
