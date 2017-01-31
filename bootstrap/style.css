@@ -1,0 +1,170 @@
+/*div {
+  border: 1px solid red;
+}*/
+
+body {
+  font-family: 'Asap', sans-serif;
+  font-size: 16px;
+}
+
+.container {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+}
+
+.top-header {
+  background-color: #c20d0d;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.top-header a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+ul {
+  margin-bottom: 0;
+  color: #ffffff;
+}
+
+.social-menu {
+  text-align: right;
+}
+
+.main-header {
+  padding-top: 10px;
+}
+
+.logo-title {
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  color: #c20d0d;
+}
+
+.logo-title img {
+  width: 200px;
+}
+
+
+.top-main {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.nav-pills {
+  padding-top: 30px;
+}
+
+.nav-pills a {
+  color: #c20d0d;
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+.main-image {
+  background-image: url('http://images8.webydo.com/92/9241710/3958/39275694-8F33-A9B7-50C1-3A9CB7197639.jpg');
+	background-repeat: no-repeat;
+  background-size: cover;
+	background-position: center;
+  height: 400px;
+}
+
+.main-title h1 {
+  text-align: center;
+  font-size: 40px;
+  font-style: italic;
+  font-weight: bold;
+  color: white;
+  background-color: #c20d0d;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.middle-main {
+  padding-bottom: 20px;
+}
+
+.popular-title h3 {
+  text-align: center;
+  font-size: 22px;
+  color: #c20d0d;
+  padding-bottom: 20px;
+}
+
+.courses .thumbnail {
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+}
+
+.courses h4 {
+  text-align: center;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 45px;
+}
+
+.courses a {
+  color: gray;
+  text-decoration: none;
+}
+
+.courses a:hover {
+  border: 2px solid #c20d0d;
+  color: #c20d0d;
+}
+
+.courses .col-xs-6.col-sm-3 {
+  display:flex;
+  justify-content: center;
+}
+
+.events h4 {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.events p {
+  color: gray;
+  text-align: justify;
+  padding: 10px;
+
+}
+
+.button p {
+  text-align: center;
+}
+
+.button a {
+  color: #c20d0d;
+}
+
+.bottom-main {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 2px solid #c20d0d;
+}
+
+.join-newsletter h3 {
+  color: #c20d0d;
+  margin-top: 5px;
+  text-align: center;
+}
+
+
+footer {
+  color: #ffffff;
+  font-size: 15px;
+  background-color: #c20d0d;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.about a, .privacy a {
+  text-decoration: none;
+  color: #ffffff;
+}
