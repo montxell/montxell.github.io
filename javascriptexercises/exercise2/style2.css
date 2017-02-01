@@ -1,0 +1,28 @@
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+header {
+  padding: 20px;
+}
+
+main {
+  padding-top: 20px;
+}
+
+main span {
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+main button {
+  font-size: 18px;
+  margin-left: 20px;
+  background-color: #3f72c8;
+  color: white;
+  width: 150px;
+  padding: 5px 15px;
+  border-radius: 4px;
+  border: 1px solid black;
+}

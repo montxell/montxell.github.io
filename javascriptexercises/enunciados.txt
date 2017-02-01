@@ -1,0 +1,51 @@
+
+ENUNCIADOS
+
+1- Crear una página muy simple con un texto y un link o un botón.
+Al pulsar el botón, el texto debe cambiar de color, tamaño. También haced que el texto
+cambie de contenido (por ejemplo que ponga "botón pulsado!".
+
+2- Lo mismo, pero el texto debe aparecer al pulsar el botón, inicialmente no debe aparecer
+en pantalla.
+
+3- Crear un div con una imagen de fondo y 3 botones. Cada botón hará que la imagen
+de fondo del div cambie a una diferente. Por ejemplo: manzanas, limones y patatas.
+
+4- Crear un texto y dos botones. Uno de los botones hará que el texto cambie a cada
+ vez más transparente, y el otro a cada vez más opaco.
+
+Pistas:
+
+Recordad que los colores transparentes de indican con rgba(red, green, blue, alpha),
+donde el nivel de cada color va de 0 a 255 y el alpha va de 0 a 1 (permite decimales como 0.75).
+
+Aquí necesitáis una variable que guarde el alpha actual, y construya el color
+"rgba(r,g,b,a)" según convenga en cada momento.
+
+5- Algo parecido al ejercicio 3, pero ahora tendréis una lista de imágenes y un botón
+ para ir pasando por todas ellas (al llegar a la última se comenzará de nuevo por la primera).
+
+Para esto necesitaréis una lista/array en javascript. Ya os explicaré más pero de
+ momento simplemente tenéis que saber que podéis definir un array de strings así:
+
+let images = [ "lemons.jpg", "apples.jpg", "potatoes.jpg" ];
+
+Para acceder a un elemento: images[1] <--- daría "apples.jpg"
+Para acceder a la longitud: images.length  <--- daría 3
+
+6- Avanzado: Parecido al ejercicio 5, pero en lugar de poner un botón, las imágenes
+irán pasando automáticamente cada 2 segundos. Ver el método setTimeout.
+
+7- Crear una página con un menú arriba a la derecha, como en el ejemplo que os pasé,
+ y hacer que en móviles el menú se convierta en un icono de menú (usad este icono de
+ font-fontawesome por ejemplo). Al pulsar el botón, el menú debe aparecer pero en vertical,
+ entre el header y el contenido. (Seguidamente os paso un boceto para que lo tengáis más claro).
+
+Nota: para el menú tenéis dos opciones. O cambiar el CSS para que en mobile se muestre
+diferente o (quizás mejor) hacer dos versiones del menú, una que se muestre en desktop
+y otra en mobile (jugar con display:none).
+
+8- En el ejercicio anterior, hacer que los botones de menú cambien la imagen de fondo,
+el título y los párrafos, como si la página cambiara, pero todo desde JS, sin cambiar
+de página HTML (a esto se le llama SPA, single-page-app). La opción seleccionada actualmente
+debe estar resaltada de alguna manera, para saber dónde estamos.
