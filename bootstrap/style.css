@@ -132,7 +132,6 @@ ul {
   color: gray;
   text-align: justify;
   padding: 10px;
-
 }
 
 .button p {
@@ -153,6 +152,14 @@ ul {
   color: #c20d0d;
   margin-top: 5px;
   text-align: center;
+}
+
+.subscribe-newsletter .form-control {
+  padding: 20px;
+}
+
+.subscribe-newsletter .btn-default {
+  padding: 10px;
 }
 
 
