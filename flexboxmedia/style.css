@@ -237,6 +237,7 @@ a {
 
 	.most-popular, .must-read {
 		flex-direction: column;
+		margin-right: 10px;
 	}
 
 	.paragraph {
