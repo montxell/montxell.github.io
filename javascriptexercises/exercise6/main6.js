@@ -12,7 +12,7 @@ let i = 0;
 //tiempo cambio imagen
 let millisecondsChange = 2000;
 
-//función cambio fondo imagen continuo para introducir en función con setTimeout
+//función cambio fondo imagen continuo para introducir en setTimeout
 function changeBackgroundImage() {
 
   panel.style["background-image"] = "url('" + images[i] + "')";
