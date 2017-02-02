@@ -10,9 +10,13 @@ menuMobile.style.display = "none";
 let buttonDisplay = document.getElementById("display-button");
 console.log(buttonDisplay);
 
-// función de mostrar el menu desplegable con el botón
+// función de mostrar y ocultar el menu desplegable con el botón
 buttonDisplay.onclick = function() {
-  menuMobile.style.display = "inline";
+  if (menuMobile.style.display == "none") {
+    menuMobile.style.display = "inline";
+  } else {
+    menuMobile.style.display = "none";
+  }
 }
 
 
@@ -74,6 +78,7 @@ buttonOneMobile.onclick = function() {
   secondParagraph.textContent = paragraphTwoOption1;
   document.querySelector(".menu-display button.active").classList.remove("active");
   buttonOneMobile.classList.add("active");
+  menuMobile.style.display = "none";
 }
 
 
@@ -120,6 +125,7 @@ buttonTwoMobile.onclick = function() {
   secondParagraph.textContent = paragraphTwoOption2;
   document.querySelector(".menu-display button.active").classList.remove("active");
   buttonTwoMobile.classList.add("active");
+  menuMobile.style.display = "none";
 }
 
 
@@ -165,4 +171,5 @@ buttonThreeMobile.onclick = function() {
   secondParagraph.textContent = paragraphTwoOption3;
   document.querySelector(".menu-display button.active").classList.remove("active");
   buttonThreeMobile.classList.add("active");
+  menuMobile.style.display = "none";
 }

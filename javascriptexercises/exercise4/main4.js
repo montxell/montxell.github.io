@@ -12,6 +12,9 @@ let opacityButton = document.getElementById("option2");
 console.log(opacityButton);
 
 
+let alpha = 0.5;
+
+
 transparencyButton.onclick = function() {
 
   if (alpha > 0) {
@@ -24,7 +27,7 @@ transparencyButton.onclick = function() {
 
   }
 
-  //paragraph.style.color
+  paragraph.style.color = "rgba(255, 255, 255, " + alpha + ")";
 
 }
 
@@ -40,6 +43,6 @@ opacityButton.onclick = function() {
     alpha = 1;
   }
 
-  //paragraph.style.color
+  paragraph.style.color = "rgba(255, 255, 255, " + alpha + ")";
 
 }

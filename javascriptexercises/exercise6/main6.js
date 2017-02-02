@@ -6,6 +6,32 @@ console.log(panel);
 //array que contiene las imágenes a cambiar
 let images = ["images/apples.jpg", "images/lemons.jpg", "images/oranges.jpg"];
 
+
+//longitud del array
+let n = images.length;
+
+//número inicial de partida
+let x = n;
+
+//tiempo cambio imagen
+let millisecondsChange = 2000;
+
+//función cambio fondo imagen          // x % n, devuelve el resto. Esto indicará el índice del array --> images[index]
+function changeBackgroundImage() {    // Así para 4 % 3 = 1; 5 % 3 = 2; 6 % 3 = 0; <-- Se vuelve al principio del array
+    let index = x % n;
+    panel.style["background-image"] = "url('" + images[index] + "')";
+    x++;
+
+    setTimeout(changeBackgroundImage, millisecondsChange);
+};
+
+changeBackgroundImage();
+
+
+
+/*
+//OPCIÓN ALTERNATIVA
+
 //posición inicial de la imagen
 let i = 0;
 
@@ -33,3 +59,5 @@ function changeBackgroundImage() {
 
 
 changeBackgroundImage();
+
+*/
