@@ -130,27 +130,23 @@ ul {
 
 .image-one {
   background-image: url('images/salsa.jpg');
+}
+
+.image-two {
+  background-image: url('images/ballet.jpg');
+}
+
+.image-three {
+  background-image: url('images/tango.jpg');
+}
+
+.image-one, .image-two, .image-three {
 	background-repeat: no-repeat;
   background-size: cover;
 	background-position: center;
   height: 350px;
 }
 
-.image-two {
-  background-image: url('images/ballet.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 350px;
-}
-
-.image-three {
-  background-image: url('images/tango.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 350px;
-}
 
 .events p {
   color: gray;
