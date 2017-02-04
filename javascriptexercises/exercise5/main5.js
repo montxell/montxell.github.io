@@ -14,21 +14,36 @@ let images = ["images/apples.jpg", "images/lemons.jpg", "images/oranges.jpg"];
 //longitud del array
 let n = images.length;
 
-//número inicial de partida
-let x = n + 1;
+//número inicial de partida --> Se inicia en 1, porque la imagen actual sin click es images[0].
+let x = 1;
 
-//función cambio fondo imagen           // x % n, devuelve el resto. Esto indicará el índice del array --> images[index]
-button.onclick = function() {          // Así para 4 % 3 = 1; 5 % 3 = 2; 6 % 3 = 0; <-- Se vuelve al principio del array
+                                        // (x+1) % n, devuelve el resto. Esto indicará el índice del array --> images[x]
+//función cambio fondo imagen           // Así para 1 % 3 = 1; 2 % 3 = 2; 3 % 3 = 0; <-- Se vuelve al principio del array
+button.onclick = function() {
+    panel.style["background-image"] = "url('" + images[x] + "')";
+    x = (x + 1) % n;
+};
+
+
+/*
+// OPCIÓN ALTERNATIVA 1
+
+//longitud del array
+let n = images.length;
+
+//número inicial de partida
+let x = 1;
+
+//función cambio fondo imagen
+button.onclick = function() {
     let index = x % n;
     panel.style["background-image"] = "url('" + images[index] + "')";
     x++;
-
 };
 
 
 
-/*
-// OPCIÓN ALTERNATIVA
+// OPCIÓN ALTERNATIVA 2
 
 //posición inicial de la imagen
 let i = 0;

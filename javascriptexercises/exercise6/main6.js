@@ -11,13 +11,30 @@ let images = ["images/apples.jpg", "images/lemons.jpg", "images/oranges.jpg"];
 let n = images.length;
 
 //número inicial de partida
-let x = n;
+let x = 0;
 
 //tiempo cambio imagen
 let millisecondsChange = 2000;
 
-//función cambio fondo imagen          // x % n, devuelve el resto. Esto indicará el índice del array --> images[index]
-function changeBackgroundImage() {    // Así para 4 % 3 = 1; 5 % 3 = 2; 6 % 3 = 0; <-- Se vuelve al principio del array
+                                        // (x+1) % n, devuelve el resto. Esto indicará el índice del array --> images[x]
+//función cambio fondo imagen           // Así para 1 % 3 = 1; 2 % 3 = 2; 3 % 3 = 0; <-- Se vuelve al principio del array
+function changeBackgroundImage() {
+    panel.style["background-image"] = "url('" + images[x] + "')";
+    x = (x + 1) % n;
+
+    setTimeout(changeBackgroundImage, millisecondsChange);
+};
+
+changeBackgroundImage();
+
+
+
+/*
+
+//OPCIÓN ALTERNATIVA 1
+
+//función cambio fondo imagen
+function changeBackgroundImage() {
     let index = x % n;
     panel.style["background-image"] = "url('" + images[index] + "')";
     x++;
@@ -29,8 +46,7 @@ changeBackgroundImage();
 
 
 
-/*
-//OPCIÓN ALTERNATIVA
+//OPCIÓN ALTERNATIVA 2
 
 //posición inicial de la imagen
 let i = 0;
@@ -56,7 +72,6 @@ function changeBackgroundImage() {
   setTimeout(changeBackgroundImage, millisecondsChange);
 
 };
-
 
 changeBackgroundImage();
 
