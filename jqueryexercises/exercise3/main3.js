@@ -1,4 +1,21 @@
 
+// Uso de data-attributes
+
+// elemento de la imagen
+let panel = $("#image-panel");
+
+$("button").click(function() {
+  let clickedButton = $(this);
+  let backgroundImage = clickedButton.data("backimage");
+  panel.css("background-image", "url('" + backgroundImage + "')");
+});
+
+
+
+// OPCIÓN SIN data-attributes
+
+/*
+
 // elemento de la imagen
 let panel = $("#image-panel");
 console.log(panel);
@@ -23,3 +40,5 @@ button2.click(function() {
 button3.click(function() {
   panel.css("background-image", "url('images/oranges.jpg')");
 });
+
+*/

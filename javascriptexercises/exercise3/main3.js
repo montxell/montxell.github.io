@@ -1,4 +1,32 @@
 
+// Uso de data-attributes
+
+// elemento de la imagen
+let panel = document.getElementById("image-panel");
+
+// elemento de todos los botones
+let buttons = document.querySelectorAll("button");
+
+// asignación de click a cada uno de los botones
+for (let button of buttons) {
+  button.onclick = displayImage;
+}
+
+// función cambio de imagen de fondo
+function displayImage(event) {
+  let clickedButton = event.target;
+  let backgroundImage = clickedButton.dataset.backimage;  // También clickedButton.getAttribute("data-backimage");
+  panel.style["background-image"] = "url('" + backgroundImage + "')";
+}
+
+
+
+
+
+// OPCIÓN SIN data-attributes
+
+/*
+
 // elemento de la imagen
 let panel = document.getElementById("image-panel");
 console.log(panel);
@@ -23,3 +51,5 @@ button2.onclick = function() {
 button3.onclick = function() {
   panel.style["background-image"] = "url('images/oranges.jpg')";
 }
+
+*/
