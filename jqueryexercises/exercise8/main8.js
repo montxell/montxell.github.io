@@ -1,10 +1,10 @@
 
 // elemento del menu desplegable
-let menuMobile = $("#mobile-display");
+let menuMobile = $(".menu-display");
 console.log(menuMobile);
 
-// no mostrar inicialmente el menu desplegable
-menuMobile.hide();
+// no mostrar inicialmente el menu desplegable --> Se incluye en el css (.menu-display {display: none;})
+//                                                 en lugar de poner menuMobile.hide();
 
 // elemento del botón del menu desplegable
 let buttonDisplay = $("#display-button");

@@ -53,6 +53,10 @@ button.active {
   background-color: orange;
 }
 
+.menu-display {
+  display: none;
+}
+
 .menu-display button {
   display: flex;
   flex-direction: column;

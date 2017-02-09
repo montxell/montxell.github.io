@@ -3,8 +3,8 @@
 let textLine = $("main span");
 console.log(textLine);
 
-// no mostrar inicialmente el texto
-textLine.hide();
+// no mostrar inicialmente el texto ---> Se incluye en el css (main span {display: none;})
+//                                       en lugar de poner textLine.hide();
 
 // elemento del botón
 let button = $("main button");

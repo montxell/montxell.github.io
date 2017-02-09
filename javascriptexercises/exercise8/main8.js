@@ -3,8 +3,8 @@
 let menuMobile = document.getElementById("mobile-display");
 console.log(menuMobile);
 
-// no mostrar inicialmente el menu desplegable
-menuMobile.style.display = "none";
+// no mostrar inicialmente el menu desplegable --> Se incluye en el css (.menu-display {display: none;})
+//                                                 en lugar de poner menuMobile.style.display = "none";
 
 // elemento del botón del menu desplegable
 let buttonDisplay = document.getElementById("display-button");

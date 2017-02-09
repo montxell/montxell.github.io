@@ -2,11 +2,11 @@
 //----- inicio ELEMENTOS MENÚ VERSIÓN MÓVIL -----//
 
 // elemento del menu desplegable
-let menuMobile = $("#mobile-display");
+let menuMobile = $(".menu-display");
 console.log(menuMobile);
 
-// no mostrar inicialmente el menu desplegable
-menuMobile.hide();
+// no mostrar inicialmente el menu desplegable --> Se incluye en el css (.menu-display {display: none;})
+//                                                 en lugar de poner menuMobile.hide();
 
 // elemento del botón del menu desplegable
 let buttonDisplay = $("#display-button");
@@ -200,8 +200,7 @@ let buttonsMobile = $(".menu-display button");
 
 // BOTONES
 
-// animación botones opción 1, opción 2 y opción 3
-function animateButtons() {
+// animación botones opción 1, opción 2 y opción 3 en la versión normal y móvil
 
   buttons.mouseover(function(){
     $(this).animate({padding: "10px"});
@@ -210,13 +209,6 @@ function animateButtons() {
   buttons.mouseout(function(){
     $(this).animate({padding: "5px"});
   });
-}
-
-animateButtons();
-
-
-// animación botones versión móvil opción 1, opción 2 y opción 3
-function animateButtonsMobile() {
 
   buttonsMobile.mouseover(function(){
     $(this).animate({padding: "10px"});
@@ -225,42 +217,36 @@ function animateButtonsMobile() {
   buttonsMobile.mouseout(function(){
     $(this).animate({padding: "5px"});
   });
-}
-
-animateButtonsMobile();
 
 
 
 // PÁRRAFOS
 
-// La animación se realiza para que aparezca cada uno de los párrafos, pero se podría
-// hacer que aparecieran a la vez, se debe asignar el elemento de todos los párrafos
-//let paragraphs = $(".paragraphs > div");
+// La animación se realiza para que aparezca cada uno de los párrafos, pero podrían aparecer a la vez
+// sustituyendo firstParagraph y secondParagraph por paragraphs.
+
+let paragraphs = $(".paragraphs p");
 
 // animación párrafos efecto 'fade in' con animate
-function animateParagraphs() {
+
   buttons.click(function(){
-    firstParagraph.css("opacity","0");
-    secondParagraph.css("opacity", "0");
+    paragraphs.css("opacity","0");
     firstParagraph.animate({opacity: 1}, 700, function() {
       secondParagraph.animate({opacity: 1}, 700);
     });
   });
 
   buttonsMobile.click(function(){
-    firstParagraph.css("opacity","0");
-    secondParagraph.css("opacity", "0");
+    paragraphs.css("opacity","0");
     firstParagraph.animate({opacity: 1}, 700, function() {
       secondParagraph.animate({opacity: 1}, 700);
     });
   });
-}
 
-animateParagraphs();
 
 /*
 // animación párrafos efecto 'fade in' con método fadeIn()
-function fadeInParagraphs() {
+
   buttons.click(function() {
     secondParagraph.hide();
     firstParagraph.hide().fadeIn(500, function() {
@@ -274,9 +260,6 @@ function fadeInParagraphs() {
       secondParagraph.fadeIn("slow");
     });
   });
-}
-
-fadeInParagraphs();
 */
 
 

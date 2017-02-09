@@ -3,8 +3,8 @@
 let text = document.querySelector("main span");
 console.log(text);
 
-// no mostrar inicialmente el texto
-text.style.display = "none";
+// no mostrar inicialmente el texto ---> Se incluye en el css (main span {display: none;})
+//                                       en lugar de poner text.style.display = "none";
 
 // elemento del botón
 let button = document.querySelector("main button");
