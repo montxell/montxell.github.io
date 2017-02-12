@@ -13,18 +13,22 @@ h1 {
 span, p {
   margin-left: 15px; }
 
-input {
+.add-section {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.add-box input {
   font-size: 18px;
   margin-left: 15px; }
-
-button {
+.add-box button {
   font-size: 18px;
   color: #184694;
   background-color: #ffffff;
   border: 1px solid #184694;
   border-radius: 5px; }
-
-button:hover {
+.add-box button:hover {
   color: #ffffff;
   background-color: #184694;
   border: 1px solid #ffffff; }
@@ -38,21 +42,29 @@ button:hover {
   -webkit-align-items: baseline;
       -ms-flex-align: baseline;
           align-items: baseline; }
-
-p {
-  font-family: "Indie Flower", cursive;
-  font-size: 24px;
-  text-decoration: underline;
-  margin-top: 30px;
-  margin-bottom: 0; }
-
-.shop-list span {
-  font-size: 20px; }
+  .shop-list p {
+    font-family: "Indie Flower", cursive;
+    font-size: 24px;
+    text-decoration: underline;
+    margin-top: 30px;
+    margin-bottom: 0; }
+  .shop-list span {
+    font-size: 20px; }
 
 li {
   font-family: "Indie Flower", cursive; }
+  li button {
+    font-size: 14px; }
 
-li button {
-  font-size: 14px; }
+@media (max-width: 768px) {
+  h1 {
+    font-size: 32px; }
+
+  .add-section, .shop-list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; } }
 
 /*# sourceMappingURL=style.css.map */

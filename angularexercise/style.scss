@@ -29,46 +29,68 @@ span, p {
   margin-left: $margin-left;
 }
 
-input{
-  font-size: 18px;
-  margin-left: $margin-left;
+.add-section {
+  display: flex;
 }
 
-button {
-  font-size: 18px;
-  color: $secondary-color;
-  background-color: $secondary-backgroundcolor;
-  border: 1px solid $secondary-color;
-  border-radius: 5px;
+.add-box {
+  input{
+    font-size: 18px;
+    margin-left: $margin-left;
+  }
+
+  button {
+    font-size: 18px;
+    color: $secondary-color;
+    background-color: $secondary-backgroundcolor;
+    border: 1px solid $secondary-color;
+    border-radius: 5px;
+  }
+
+  button:hover {
+    color: $main-color;
+    background-color: $main-backgroundcolor;
+    border: 1px solid $main-color;
+  }
 }
 
-button:hover {
-  color: $main-color;
-  background-color: $main-backgroundcolor;
-  border: 1px solid $main-color;
-}
 
 .shop-list {
   display: flex;
   align-items: baseline;
+
+  p {
+    font-family: $list-font;
+    font-size: 24px;
+    text-decoration: underline;
+    margin-top: 30px;
+    margin-bottom: 0;
+  }
+
+  span {
+    font-size: 20px;
+  }
 }
 
-p {
-  font-family: $list-font;
-  font-size: 24px;
-  text-decoration: underline;
-  margin-top: 30px;
-  margin-bottom: 0;
-}
-
-.shop-list span {
-  font-size: 20px;
-}
 
 li {
   font-family: $list-font;
+
+  button {
+    font-size: 14px;
+  }
 }
 
-li button {
-  font-size: 14px;
+
+
+@media(max-width: 768px) {
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .add-section, .shop-list {
+    flex-direction: column;
+  }
+
 }

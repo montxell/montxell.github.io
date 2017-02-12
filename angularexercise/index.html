@@ -17,17 +17,23 @@
 
   <h1>Gestión de la Lista de la Compra</h1>
 
-  <span>Escribe el producto a incluir en la lista:</span>
+  <div class="add-section">
+    <span>Escribe el producto a incluir en la lista:</span>
 
-  <input ng-model="item" type="text">
+    <div class="add-box">
+      <input ng-model="item" type="text">
 
-  <button ng-click="addItem()">Añadir</button>
+      <button ng-click="addItem()">Añadir</button>
+    </div>
+
+  </div>
+
 
   <div class="shop-list">
 
     <p>Lista de la compra</p>
 
-    <span>( selecciona < x > para eliminar el producto )</span>
+    <span>( selecciona &lt; x &gt; para eliminar el producto )</span>
 
   </div>
 
