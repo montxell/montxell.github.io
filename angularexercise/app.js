@@ -16,7 +16,7 @@ app.controller('MainController', function($scope) {
   }
 
   // Función de eliminación del producto de la lista.
-  $scope.removeItem = function(product) {
+  $scope.removeItem = function(productIndex) {
     $scope.products.splice(productIndex, 1);
   }
 

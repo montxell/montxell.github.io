@@ -33,25 +33,23 @@ span, p {
   display: flex;
 }
 
-.add-box {
-  input{
-    font-size: 18px;
-    margin-left: $margin-left;
-  }
+input{
+  font-size: 18px;
+  margin-left: $margin-left;
+}
 
-  button {
-    font-size: 18px;
-    color: $secondary-color;
-    background-color: $secondary-backgroundcolor;
-    border: 1px solid $secondary-color;
-    border-radius: 5px;
-  }
+button {
+  font-size: 18px;
+  color: $secondary-color;
+  background-color: $secondary-backgroundcolor;
+  border: 1px solid $secondary-color;
+  border-radius: 5px;
+}
 
-  button:hover {
-    color: $main-color;
-    background-color: $main-backgroundcolor;
-    border: 1px solid $main-color;
-  }
+button:hover {
+  color: $main-color;
+  background-color: $main-backgroundcolor;
+  border: 1px solid $main-color;
 }
 
 

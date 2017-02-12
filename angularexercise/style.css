@@ -19,16 +19,18 @@ span, p {
   display: -ms-flexbox;
   display: flex; }
 
-.add-box input {
+input {
   font-size: 18px;
   margin-left: 15px; }
-.add-box button {
+
+button {
   font-size: 18px;
   color: #184694;
   background-color: #ffffff;
   border: 1px solid #184694;
   border-radius: 5px; }
-.add-box button:hover {
+
+button:hover {
   color: #ffffff;
   background-color: #184694;
   border: 1px solid #ffffff; }
