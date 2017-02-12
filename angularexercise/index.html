@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="listaCompraApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Gestión Lista de la Compra</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Dosis|Indie+Flower" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="angular.min.js"></script>
+
+</head>
+
+<body ng-controller="MainController">
+
+  <h1>Gestión de la Lista de la Compra</h1>
+
+  <span>Escribe el producto a incluir en la lista:</span>
+
+  <input ng-model="item" type="text">
+
+  <button ng-click="addItem()">Añadir</button>
+
+  <div class="shop-list">
+
+    <p>Lista de la compra</p>
+
+    <span>( selecciona < x > para eliminar el producto )</span>
+
+  </div>
+
+  <ul>
+    <li ng-repeat="product in products"> {{ product }} <button ng-click="removeItem($index)"> x </button> </li>
+  </ul>
+
+
+
+  <script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+
+$main-font: 'Dosis', sans-serif;
+$list-font: 'Indie Flower', cursive;
+
+$main-color: #ffffff;
+$secondary-color: #184694;
+
+$main-backgroundcolor: #184694;
+$secondary-backgroundcolor: #ffffff;
+
+$margin-left: 15px;
+
+
+body {
+  font-size: 22px;
+  font-family: $main-font;
+  margin: 0;
+}
+
+h1 {
+  color: $main-color;
+  background-color: $main-backgroundcolor;
+  text-align: center;
+  margin-top: 0;
+  padding: 20px;
+}
+
+span, p {
+  margin-left: $margin-left;
+}
+
+input{
+  font-size: 18px;
+  margin-left: $margin-left;
+}
+
+button {
+  font-size: 18px;
+  color: $secondary-color;
+  background-color: $secondary-backgroundcolor;
+  border: 1px solid $secondary-color;
+  border-radius: 5px;
+}
+
+button:hover {
+  color: $main-color;
+  background-color: $main-backgroundcolor;
+  border: 1px solid $main-color;
+}
+
+.shop-list {
+  display: flex;
+  align-items: baseline;
+}
+
+p {
+  font-family: $list-font;
+  font-size: 24px;
+  text-decoration: underline;
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+
+.shop-list span {
+  font-size: 20px;
+}
+
+li {
+  font-family: $list-font;
+}
+
+li button {
+  font-size: 14px;
+}

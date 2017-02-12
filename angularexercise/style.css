@@ -1,0 +1,58 @@
+body {
+  font-size: 22px;
+  font-family: "Dosis", sans-serif;
+  margin: 0; }
+
+h1 {
+  color: #ffffff;
+  background-color: #184694;
+  text-align: center;
+  margin-top: 0;
+  padding: 20px; }
+
+span, p {
+  margin-left: 15px; }
+
+input {
+  font-size: 18px;
+  margin-left: 15px; }
+
+button {
+  font-size: 18px;
+  color: #184694;
+  background-color: #ffffff;
+  border: 1px solid #184694;
+  border-radius: 5px; }
+
+button:hover {
+  color: #ffffff;
+  background-color: #184694;
+  border: 1px solid #ffffff; }
+
+.shop-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline; }
+
+p {
+  font-family: "Indie Flower", cursive;
+  font-size: 24px;
+  text-decoration: underline;
+  margin-top: 30px;
+  margin-bottom: 0; }
+
+.shop-list span {
+  font-size: 20px; }
+
+li {
+  font-family: "Indie Flower", cursive; }
+
+li button {
+  font-size: 14px; }
+
+/*# sourceMappingURL=style.css.map */
