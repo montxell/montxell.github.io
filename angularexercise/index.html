@@ -37,8 +37,11 @@
 
   </div>
 
+  <!-- Se añade en ng-repeat 'track by $index' para identificar por índice los elementos del array, y no por
+  los elementos en sí. Esto permite que cada elemento sea considerado único, y por lo tanto, se pueda repetir en el array -->
+
   <ul>
-    <li ng-repeat="product in products"> {{ product }} <button ng-click="removeItem($index)"> x </button> </li>
+    <li ng-repeat="product in products track by $index"> {{ product }} <button ng-click="removeItem($index)"> x </button> </li>
   </ul>
 
 
