@@ -10,7 +10,7 @@ app.controller('MainController', function ($scope, $http) {
         $scope.resultsAlbums = false;
         var searchText = $scope.searchText;
         if (searchText == null) {
-            $scope.textNoMatches = "Oh oh, you didn't filled the search box!";
+            $scope.textNoMatches = "Oh oh, you didn't fill the search box!";
             $scope.noMatches = true;
             $scope.results = false;
         }

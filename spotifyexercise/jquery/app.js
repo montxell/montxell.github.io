@@ -12,7 +12,7 @@ buttonSearch.click(function () {
 function getSearchResults() {
     var searchText = $("input").val();
     if (searchText.length == 0) {
-        $(".noMatches p").show().text("Oh oh, you didn't filled the search box!");
+        $(".noMatches p").show().text("Oh oh, you didn't fill the search box!");
     }
     else {
         var settings = {

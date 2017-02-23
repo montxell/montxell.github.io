@@ -34,7 +34,7 @@ app.controller('MainController', function($scope, $http: ng.IHttpService) {
 
     if (searchText == null) {
 
-      $scope.textNoMatches = "Oh oh, you didn't filled the search box!";
+      $scope.textNoMatches = "Oh oh, you didn't fill the search box!";
       $scope.noMatches = true;  // Show the text: no matches found
       $scope.results = false;  // Hide the previous results of artist search
 
@@ -97,7 +97,7 @@ app.controller('MainController', function($scope, $http: ng.IHttpService) {
 function toSimpleArtist(artist) {
 
   let imageUrl;
-  
+
   if (artist.images.length > 0) {
     imageUrl = artist.images[0].url;
   } else {
