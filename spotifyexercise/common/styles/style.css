@@ -116,13 +116,15 @@ h3 {
   padding: 10px; }
 #results img, #results-albums img, .results img, .results-albums img {
   margin-left: 15px;
-  width: 80px;
+  min-width: 80px;
   height: 80px;
   border: 2px solid #492e59;
   border-radius: 10px; }
 #results a, #results span, #results-albums a, #results-albums span, .results a, .results span, .results-albums a, .results-albums span {
   margin-left: 15px;
+  margin-right: 15px;
   font-size: 20px;
+  text-align: justify;
   text-decoration: none;
   color: #492e59; }
 
@@ -150,12 +152,15 @@ footer {
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
-            flex-direction: column; }
+            flex-direction: column;
+    text-align: center; }
     .search-section .search-box {
       margin-left: 0;
       margin-top: 15px; }
 
-  .option-choice .quote-option #jquery-quote, .option-choice .quote-option #angular-quote {
-    font-size: 24px; } }
+  .option-choice {
+    height: 225px; }
+    .option-choice .quote-option {
+      display: none; } }
 
 /*# sourceMappingURL=style.css.map */
