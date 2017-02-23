@@ -1,0 +1,161 @@
+body {
+  color: #492e59;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 24px;
+  margin: 0; }
+
+h1 {
+  color: #ffffff;
+  background-color: #492e59;
+  text-align: center;
+  margin: 0;
+  padding: 20px; }
+
+h2 {
+  margin-left: 15px;
+  margin-top: 50px;
+  margin-bottom: 50px; }
+
+.option-choice {
+  margin-left: 15px;
+  margin-right: 15px;
+  height: 300px; }
+  .option-choice .button-option {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .option-choice .button-option #jquery-button, .option-choice .button-option #angular-button {
+      color: #ffffff;
+      background-color: #492e59;
+      padding: 10px;
+      border: 2px solid #492e59;
+      border-radius: 10px;
+      text-align: center;
+      text-decoration: none; }
+    .option-choice .button-option #jquery-button:hover, .option-choice .button-option #angular-button:hover {
+      color: #492e59;
+      background-color: #ffffff; }
+  .option-choice .quote-option {
+    text-align: center;
+    margin-top: 40px; }
+    .option-choice .quote-option #jquery-quote, .option-choice .quote-option #angular-quote {
+      display: none;
+      font-size: 28px;
+      font-weight: bolder; }
+
+h3 {
+  font-size: 36px;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  border-bottom: 2px solid #492e59; }
+
+.search-section {
+  margin-left: 15px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+  .search-section .search-box {
+    margin-left: 15px; }
+    .search-section .search-box input {
+      color: #492e59;
+      font-size: 18px;
+      border: 1px solid #492e59;
+      border-radius: 5px;
+      padding: 3px; }
+    .search-section .search-box .search-button {
+      color: #ffffff;
+      background-color: #492e59;
+      font-size: 18px;
+      border: 2px solid #492e59;
+      border-radius: 10px; }
+    .search-section .search-box .search-button:hover {
+      color: #492e59;
+      background-color: #ffffff; }
+
+.results-title p, .resultsTitle p {
+  color: #ffffff;
+  background-color: #492e59;
+  margin: 0;
+  padding: 10px;
+  text-align: center; }
+
+.noMatches p {
+  margin-left: 15px;
+  font-size: 20px;
+  color: #492e59; }
+
+#results div, #results-albums div, .results div, .results-albums div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: 2px solid #492e59;
+  padding: 10px; }
+#results img, #results-albums img, .results img, .results-albums img {
+  margin-left: 15px;
+  width: 80px;
+  height: 80px;
+  border: 2px solid #492e59;
+  border-radius: 10px; }
+#results a, #results span, #results-albums a, #results-albums span, .results a, .results span, .results-albums a, .results-albums span {
+  margin-left: 15px;
+  font-size: 20px;
+  text-decoration: none;
+  color: #492e59; }
+
+footer {
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #492e59;
+  text-align: center;
+  padding: 5px; }
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 32px; }
+
+  h2 {
+    margin-right: 15px;
+    font-size: 28px;
+    text-align: center; }
+
+  h3 {
+    font-size: 30px; }
+
+  .search-section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    .search-section .search-box {
+      margin-left: 0;
+      margin-top: 15px; }
+
+  .option-choice .quote-option #jquery-quote, .option-choice .quote-option #angular-quote {
+    font-size: 24px; } }
+
+/*# sourceMappingURL=style.css.map */

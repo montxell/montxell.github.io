@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="spotifySearchApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>The Spotify Search App</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="../common/styles/style.css">
+  <script src="angular.min.js"></script>
+
+</head>
+
+<body ng-controller="MainController">
+
+<h1>The Spotify Search App</h1>
+
+<h3>AngularJS Version</h3>
+
+<div class="search-section">
+  <span>What ARTIST are you looking for?</span>
+
+  <div class="search-box">
+    <input ng-model="searchText" type="text">
+
+    <button class="search-button" ng-click="clickSearch()">Search</button>
+  </div>
+</div>
+
+
+<div class="resultsTitle" ng-show="resultsTitle">
+  <p ng-bind="textResultsTitle"></p>
+</div>
+
+
+<div class="noMatches" ng-show="noMatches">
+  <p ng-bind="textNoMatches"></p>
+</div>
+
+
+<div class="results" ng-show="results">
+
+  <div ng-repeat="artist in artists">
+    <img ng-src="{{ artist.imageUrl }}">
+    <a href="#" ng-click="clickArtist(artist.name, artist.id)"> {{ artist.name }} </a>
+  </div>
+
+</div>
+
+
+<div class="results-albums" ng-show="resultsAlbums">
+
+  <div ng-repeat="album in albums">
+    <img ng-src="{{ album.imageUrl }}">
+    <span> {{ album.name }} </span>
+  </div>
+
+</div>
+
+
+
+<footer>
+  <p>Copyright &copy; The Spotify Search App</p>
+</footer>
+
+
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+
+$main-font: 'Ubuntu', sans-serif;
+
+$main-color: #492e59;
+$secondary-color: #ffffff;
+
+$main-backgroundcolor: #492e59;
+$secondary-backgroundcolor: #ffffff;
+
+$margin-left: 15px;
+$margin-right: 15px;
+
+
+// Start BODY AND HEADER in PAGES //
+
+body {
+  color: $main-color;
+  font-family: $main-font;
+  font-size: 24px;
+  margin: 0;
+}
+
+
+h1 {
+  color: $secondary-color;
+  background-color: $main-backgroundcolor;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+// End BODY AND HEADER in PAGES //
+
+
+
+// Start MAIN-PAGE //
+
+h2 {
+  margin-left: $margin-left;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+
+.option-choice {
+  margin-left: $margin-left;
+  margin-right: $margin-right;
+  height: 300px;
+
+  .button-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #jquery-button, #angular-button {
+      color: $secondary-color;
+      background-color: $main-backgroundcolor;
+      padding: 10px;
+      border: 2px solid $main-color;
+      border-radius: 10px;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    #jquery-button:hover, #angular-button:hover {
+      color: $main-color;
+      background-color: $secondary-backgroundcolor;
+    }
+
+  }
+
+  .quote-option {
+    text-align: center;
+    margin-top: 40px;
+
+    #jquery-quote, #angular-quote {
+      display: none;
+      font-size: 28px;
+      font-weight: bolder;
+    }
+  }
+}
+
+// End MAIN-PAGE //
+
+
+
+// Start JQUERY and ANGULAR PAGES //
+
+h3 {
+  font-size: 36px;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  border-bottom: 2px solid $main-color;
+}
+
+.search-section {
+  margin-left: $margin-left;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+
+  .search-box {
+    margin-left: $margin-left;
+
+    input {
+      color: $main-color;
+      font-size: 18px;
+      border: 1px solid $main-color;
+      border-radius: 5px;
+      padding: 3px;
+    }
+
+    .search-button {
+      color: $secondary-color;
+      background-color: $main-backgroundcolor;
+      font-size: 18px;
+      border: 2px solid $main-color;
+      border-radius: 10px;
+    }
+
+    .search-button:hover {
+      color: $main-color;
+      background-color: $secondary-backgroundcolor;
+    }
+  }
+}
+
+
+.results-title, .resultsTitle {
+
+  p {
+    color: $secondary-color;
+    background-color: $main-backgroundcolor;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+  }
+
+}
+
+.noMatches {
+
+  p {
+    margin-left: $margin-left;
+    font-size: 20px;
+    color: $main-color;
+  }
+}
+
+
+#results, #results-albums, .results, .results-albums {
+
+  div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-top: 2px solid $main-color;
+    padding: 10px;
+  }
+
+  img {
+    margin-left: $margin-left;
+    width: 80px;
+    height: 80px;
+    border: 2px solid $main-color;
+    border-radius: 10px;
+  }
+
+  a, span {
+    margin-left: $margin-left;
+    font-size: 20px;
+    text-decoration: none;
+    color: $main-color;
+  }
+}
+
+// End JQUERY and ANGULAR PAGES //
+
+
+
+// Start FOOTER in PAGES //
+
+footer {
+  font-size: 18px;
+  color: $secondary-color;
+  background-color: $main-backgroundcolor;
+  text-align: center;
+  padding: 5px;
+}
+
+// End FOOTER in PAGES //
+
+
+
+// RESPONSIVE //
+
+@media(max-width: 768px) {
+
+  // Start BODY AND HEADER in PAGES //
+
+  h1 {
+    font-size: 32px;
+  }
+
+  // End BODY AND HEADER in PAGES //
+
+
+  // Start MAIN-PAGE //
+
+  h2 {
+    margin-right: $margin-right;
+    font-size: 28px;
+    text-align: center;
+  }
+
+  // End MAIN-PAGE //
+
+
+  // Start JQUERY and ANGULAR PAGES //
+
+  h3{
+    font-size: 30px;
+  }
+
+
+  .search-section {
+    flex-direction: column;
+
+    .search-box {
+      margin-left: 0;
+      margin-top: 15px;
+    }
+  }
+
+
+  .option-choice {
+    .quote-option {
+      #jquery-quote, #angular-quote {
+        font-size: 24px;
+      }
+    }
+  }
+
+  // End JQUERY and ANGULAR PAGES //
+
+}
