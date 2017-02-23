@@ -116,7 +116,7 @@ h3 {
   padding: 10px; }
 #results img, #results-albums img, .results img, .results-albums img {
   margin-left: 15px;
-  min-width: 80px;
+  width: 80px;
   height: 80px;
   border: 2px solid #492e59;
   border-radius: 10px; }
