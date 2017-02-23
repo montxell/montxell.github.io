@@ -20,7 +20,7 @@ app.controller('MainController', function($scope, $http: ng.IHttpService) {
     $scope.textResultsTitle = "RESULTS";
     $scope.resultsTitle = true;
 
-    // Hide the text: no matches found
+    // Hide the text: no matches found or you didn't fill the search box
     $scope.noMatches = false;
 
     // Show the results of artist search
@@ -35,8 +35,8 @@ app.controller('MainController', function($scope, $http: ng.IHttpService) {
     if (searchText == null) {
 
       $scope.textNoMatches = "Oh oh, you didn't fill the search box!";
-      $scope.noMatches = true;  // Show the text: no matches found
-      $scope.results = false;  // Hide the previous results of artist search
+      $scope.noMatches = true;  // Show the text
+      $scope.results = false;  // Hide the previous results of artists
 
     } else {
 
@@ -65,18 +65,64 @@ app.controller('MainController', function($scope, $http: ng.IHttpService) {
         console.log("Response:", response);
 
 
+        // ***** OPTION 1: GET ARTISTS WITH LOOP ***** //
+
         let artists = response.data.artists.items;
+
 
         if (artists.length == 0) {
 
           $scope.textNoMatches = "No matches found";
-          $scope.noMatches = true;
+          $scope.noMatches = true;  // Show the text
+          $scope.results = false;   // Hide the previous results of artists
 
         } else {
 
-          $scope.artists = artists.map(toSimpleArtist);
+          $scope.artists = [];
 
-        }
+          for (let i=0; i < artists.length; i++) {
+
+            let name =  artists[i].name;
+            let id = artists[i].id;
+            let imageUrl;
+
+            if (artists[i].images.length > 0) {
+
+              imageUrl = artists[i].images[0].url;
+
+            } else {
+
+              imageUrl = "../images/nopicture.png";
+
+            }
+
+            $scope.artists.push({
+              name: name,
+              id: id,
+              imageUrl: imageUrl
+            });
+         }
+      }
+
+
+          /*
+          // ***** OPTION 2: GET ARTISTS WITH MAP ***** //
+
+          let artists = response.data.artists.items;
+
+
+          if (artists.length == 0) {
+
+            $scope.textNoMatches = "No matches found";
+            $scope.noMatches = true;  // Show the text
+            $scope.results = false;   // Hide the previous results of artists
+
+          } else {
+
+            $scope.artists = artists.map(toSimpleArtist);
+
+          }
+          */
 
 
       }, function errorCallback(response) {
@@ -93,6 +139,8 @@ app.controller('MainController', function($scope, $http: ng.IHttpService) {
   };
 
 
+/*
+// OPTION 2: FUNCTION CALLED BY MAP FUNCTION TO GET ARTISTS
 
 function toSimpleArtist(artist) {
 
@@ -110,6 +158,8 @@ function toSimpleArtist(artist) {
     imageUrl: imageUrl
   };
 };
+*/
+
 
 
 // FUNCTION CLICK ON ARTIST TO GET THE ARTIST'S ALBUMS
@@ -149,6 +199,47 @@ $scope.clickArtist = function(name, id) {
     console.log("Received a successful response!")
     console.log("Response:", response);
 
+
+    // ***** OPTION 1: GET ALBUMS WITH LOOP ***** //
+
+    let albums = response.data.items;
+
+
+    if (albums.length == 0) {
+
+      $scope.textNoMatches = "No matches found";
+      $scope.noMatches = true;
+
+    } else {
+
+      $scope.albums = [];
+
+      for (let i=0; i < albums.length; i++) {
+
+        let name =  albums[i].name;
+        let imageUrl;
+
+        if (albums[i].images.length > 0) {
+
+          imageUrl = albums[i].images[0].url;
+
+        } else {
+
+          imageUrl = "../images/nopicture.png";
+
+        }
+
+        $scope.albums.push({
+          name: name,
+          imageUrl: imageUrl
+        });
+     }
+  }
+
+
+    /*
+    // ***** OPTION 2: GET ALBUMS WITH MAP ***** //
+
     let albums = response.data.items;
 
 
@@ -162,6 +253,7 @@ $scope.clickArtist = function(name, id) {
       $scope.albums = albums.map(toSimpleAlbum);
 
     }
+    */
 
 
   }, function errorCallback(response) {
@@ -172,6 +264,8 @@ $scope.clickArtist = function(name, id) {
 };
 
 
+/*
+// OPTION 2: FUNCTION CALLED BY MAP FUNCTION TO GET ALBUMS
 
 function toSimpleAlbum(album) {
 
@@ -188,6 +282,6 @@ function toSimpleAlbum(album) {
     imageUrl: imageUrl
   };
 };
-
+*/
 
 });

@@ -35,9 +35,26 @@ app.controller('MainController', function ($scope, $http) {
                 if (artists.length == 0) {
                     $scope.textNoMatches = "No matches found";
                     $scope.noMatches = true;
+                    $scope.results = false;
                 }
                 else {
-                    $scope.artists = artists.map(toSimpleArtist);
+                    $scope.artists = [];
+                    for (var i = 0; i < artists.length; i++) {
+                        var name_1 = artists[i].name;
+                        var id = artists[i].id;
+                        var imageUrl = void 0;
+                        if (artists[i].images.length > 0) {
+                            imageUrl = artists[i].images[0].url;
+                        }
+                        else {
+                            imageUrl = "../images/nopicture.png";
+                        }
+                        $scope.artists.push({
+                            name: name_1,
+                            id: id,
+                            imageUrl: imageUrl
+                        });
+                    }
                 }
             }, function errorCallback(response) {
                 console.error("Call failed:", response);
@@ -45,21 +62,6 @@ app.controller('MainController', function ($scope, $http) {
             $scope.searchText = null;
         }
     };
-    function toSimpleArtist(artist) {
-        var imageUrl;
-        if (artist.images.length > 0) {
-            imageUrl = artist.images[0].url;
-        }
-        else {
-            imageUrl = "../images/nopicture.png";
-        }
-        return {
-            name: artist.name,
-            id: artist.id,
-            imageUrl: imageUrl
-        };
-    }
-    ;
     $scope.clickArtist = function (name, id) {
         $scope.textResultsTitle = name.toUpperCase() + " ALBUMS";
         $scope.results = false;
@@ -85,24 +87,24 @@ app.controller('MainController', function ($scope, $http) {
                 $scope.noMatches = true;
             }
             else {
-                $scope.albums = albums.map(toSimpleAlbum);
+                $scope.albums = [];
+                for (var i = 0; i < albums.length; i++) {
+                    var name_2 = albums[i].name;
+                    var imageUrl = void 0;
+                    if (albums[i].images.length > 0) {
+                        imageUrl = albums[i].images[0].url;
+                    }
+                    else {
+                        imageUrl = "../images/nopicture.png";
+                    }
+                    $scope.albums.push({
+                        name: name_2,
+                        imageUrl: imageUrl
+                    });
+                }
             }
         }, function errorCallback(response) {
             console.error("Call failed:", response);
         });
     };
-    function toSimpleAlbum(album) {
-        var imageUrl;
-        if (album.images.length > 0) {
-            imageUrl = album.images[0].url;
-        }
-        else {
-            imageUrl = "../images/nopicture.png";
-        }
-        return {
-            name: album.name,
-            imageUrl: imageUrl
-        };
-    }
-    ;
 });

@@ -25,7 +25,7 @@ buttonSearch.click(function() {
   $("#results").empty();       // Option2: $("#results div").remove();
 
   // Delete previous artist albums results
-  $("#results-albums").empty();   // Option2: $("#results-albums div".remove();
+  $("#results-albums").empty();   // Option2: $("#results-albums div").remove();
 
   // Show the title: results
   $(".results-title p").show().text("RESULTS");
