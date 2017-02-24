@@ -39,19 +39,18 @@ app.controller('MainController', function ($scope, $http) {
                 }
                 else {
                     $scope.artists = [];
-                    for (var i = 0; i < artists.length; i++) {
-                        var name_1 = artists[i].name;
-                        var id = artists[i].id;
+                    for (var _i = 0, artists_1 = artists; _i < artists_1.length; _i++) {
+                        var artist = artists_1[_i];
                         var imageUrl = void 0;
-                        if (artists[i].images.length > 0) {
-                            imageUrl = artists[i].images[0].url;
+                        if (artist.images.length > 0) {
+                            imageUrl = artist.images[0].url;
                         }
                         else {
                             imageUrl = "../images/nopicture.png";
                         }
                         $scope.artists.push({
-                            name: name_1,
-                            id: id,
+                            name: artist.name,
+                            id: artist.id,
                             imageUrl: imageUrl
                         });
                     }
@@ -88,17 +87,17 @@ app.controller('MainController', function ($scope, $http) {
             }
             else {
                 $scope.albums = [];
-                for (var i = 0; i < albums.length; i++) {
-                    var name_2 = albums[i].name;
+                for (var _i = 0, albums_1 = albums; _i < albums_1.length; _i++) {
+                    var album = albums_1[_i];
                     var imageUrl = void 0;
-                    if (albums[i].images.length > 0) {
-                        imageUrl = albums[i].images[0].url;
+                    if (album.images.length > 0) {
+                        imageUrl = album.images[0].url;
                     }
                     else {
                         imageUrl = "../images/nopicture.png";
                     }
                     $scope.albums.push({
-                        name: name_2,
+                        name: album.name,
                         imageUrl: imageUrl
                     });
                 }

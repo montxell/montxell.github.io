@@ -80,25 +80,19 @@ app.controller('MainController', function($scope, $http: ng.IHttpService) {
 
           $scope.artists = [];
 
-          for (let i=0; i < artists.length; i++) {
+          for (let artist of artists) {
 
-            let name =  artists[i].name;
-            let id = artists[i].id;
             let imageUrl;
 
-            if (artists[i].images.length > 0) {
-
-              imageUrl = artists[i].images[0].url;
-
+            if (artist.images.length > 0) {
+              imageUrl = artist.images[0].url;
             } else {
-
               imageUrl = "../images/nopicture.png";
-
             }
 
             $scope.artists.push({
-              name: name,
-              id: id,
+              name: artist.name,
+              id: artist.id,
               imageUrl: imageUrl
             });
          }
@@ -214,23 +208,18 @@ $scope.clickArtist = function(name, id) {
 
       $scope.albums = [];
 
-      for (let i=0; i < albums.length; i++) {
+      for (let album of albums) {
 
-        let name =  albums[i].name;
         let imageUrl;
 
-        if (albums[i].images.length > 0) {
-
-          imageUrl = albums[i].images[0].url;
-
+        if (album.images.length > 0) {
+          imageUrl = album.images[0].url;
         } else {
-
           imageUrl = "../images/nopicture.png";
-
         }
 
         $scope.albums.push({
-          name: name,
+          name: album.name,
           imageUrl: imageUrl
         });
      }
