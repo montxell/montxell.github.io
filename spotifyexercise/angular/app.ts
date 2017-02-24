@@ -174,7 +174,7 @@ $scope.clickArtist = function(name, id) {
   let settings = {
     method: "GET",
     url: "https://api.spotify.com/v1/artists/" + id + "/albums",
-    data: {
+    params: {
         album_type: "album",
         offset: 0,
         limit: 20
@@ -201,7 +201,7 @@ $scope.clickArtist = function(name, id) {
 
     if (albums.length == 0) {
 
-      $scope.textNoMatches = "No matches found";
+      $scope.textNoMatches = "No albums found";
       $scope.noMatches = true;
 
     } else {

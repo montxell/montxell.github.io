@@ -68,7 +68,7 @@ app.controller('MainController', function ($scope, $http) {
         var settings = {
             method: "GET",
             url: "https://api.spotify.com/v1/artists/" + id + "/albums",
-            data: {
+            params: {
                 album_type: "album",
                 offset: 0,
                 limit: 20
@@ -82,7 +82,7 @@ app.controller('MainController', function ($scope, $http) {
             console.log("Response:", response);
             var albums = response.data.items;
             if (albums.length == 0) {
-                $scope.textNoMatches = "No matches found";
+                $scope.textNoMatches = "No albums found";
                 $scope.noMatches = true;
             }
             else {
