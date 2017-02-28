@@ -23,9 +23,6 @@ app.controller('MainController', function($scope, $http: ng.IHttpService) {
     // Hide the text: no matches found or you didn't fill the search box
     $scope.noMatches = false;
 
-    // Show the results of artist search
-    $scope.results = true;
-
     // Hide previous artist albums results
     $scope.resultsAlbums = false;
 
@@ -65,8 +62,6 @@ app.controller('MainController', function($scope, $http: ng.IHttpService) {
         console.log("Response:", response);
 
 
-        // ***** OPTION 1: GET ARTISTS WITH LOOP ***** //
-
         let artists = response.data.artists.items;
 
 
@@ -78,45 +73,28 @@ app.controller('MainController', function($scope, $http: ng.IHttpService) {
 
         } else {
 
+          // Show the results of artist search
+          $scope.results = true;
+
+
+          // ***** OPTION 1: GET ARTISTS WITH LOOP ***** //
+
           $scope.artists = [];
 
           for (let artist of artists) {
 
-            let imageUrl;
-
-            if (artist.images.length > 0) {
-              imageUrl = artist.images[0].url;
-            } else {
-              imageUrl = "../images/nopicture.png";
-            }
-
-            $scope.artists.push({
-              name: artist.name,
-              id: artist.id,
-              imageUrl: imageUrl
-            });
-         }
-      }
-
-
-          /*
-          // ***** OPTION 2: GET ARTISTS WITH MAP ***** //
-
-          let artists = response.data.artists.items;
-
-
-          if (artists.length == 0) {
-
-            $scope.textNoMatches = "No matches found";
-            $scope.noMatches = true;  // Show the text
-            $scope.results = false;   // Hide the previous results of artists
-
-          } else {
-
-            $scope.artists = artists.map(toSimpleArtist);
+            $scope.artists.push(toSimpleArtist(artist));
 
           }
-          */
+
+      /*
+         // ***** OPTION 2: GET ARTISTS WITH MAP ***** //
+
+          $scope.artists = artists.map(toSimpleArtist);
+
+      */
+
+       }
 
 
       }, function errorCallback(response) {
@@ -133,8 +111,6 @@ app.controller('MainController', function($scope, $http: ng.IHttpService) {
   };
 
 
-/*
-// OPTION 2: FUNCTION CALLED BY MAP FUNCTION TO GET ARTISTS
 
 function toSimpleArtist(artist) {
 
@@ -152,7 +128,7 @@ function toSimpleArtist(artist) {
     imageUrl: imageUrl
   };
 };
-*/
+
 
 
 
@@ -165,9 +141,6 @@ $scope.clickArtist = function(name, id) {
 
   // Hide artist search
   $scope.results = false;
-
-  // Show artist albums results
-  $scope.resultsAlbums = true;
 
 
   // Set the settings to get albums
@@ -201,48 +174,35 @@ $scope.clickArtist = function(name, id) {
 
     if (albums.length == 0) {
 
+      // Show the text
       $scope.textNoMatches = "No albums found";
       $scope.noMatches = true;
 
     } else {
 
+      // Show artist albums results
+      $scope.resultsAlbums = true;
+
+
+      // ***** OPTION 1: GET ALBUMS WITH LOOP ***** //
+
+      // Get the albums
       $scope.albums = [];
 
       for (let album of albums) {
 
-        let imageUrl;
+        $scope.albums.push(toSimpleAlbum(album));
 
-        if (album.images.length > 0) {
-          imageUrl = album.images[0].url;
-        } else {
-          imageUrl = "../images/nopicture.png";
-        }
+      }
 
-        $scope.albums.push({
-          name: album.name,
-          imageUrl: imageUrl
-        });
-     }
-  }
-
-
-    /*
-    // ***** OPTION 2: GET ALBUMS WITH MAP ***** //
-
-    let albums = response.data.items;
-
-
-    if (albums.length == 0) {
-
-      $scope.textNoMatches = "No matches found";
-      $scope.noMatches = true;
-
-    } else {
+  /*
+      // ***** OPTION 2: GET ALBUMS WITH MAP ***** //
 
       $scope.albums = albums.map(toSimpleAlbum);
 
+  */
+
     }
-    */
 
 
   }, function errorCallback(response) {
@@ -253,8 +213,6 @@ $scope.clickArtist = function(name, id) {
 };
 
 
-/*
-// OPTION 2: FUNCTION CALLED BY MAP FUNCTION TO GET ALBUMS
 
 function toSimpleAlbum(album) {
 
@@ -271,6 +229,6 @@ function toSimpleAlbum(album) {
     imageUrl: imageUrl
   };
 };
-*/
+
 
 });

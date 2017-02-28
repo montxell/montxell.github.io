@@ -6,7 +6,6 @@ app.controller('MainController', function ($scope, $http) {
         $scope.textResultsTitle = "RESULTS";
         $scope.resultsTitle = true;
         $scope.noMatches = false;
-        $scope.results = true;
         $scope.resultsAlbums = false;
         var searchText = $scope.searchText;
         if (searchText == null) {
@@ -38,21 +37,11 @@ app.controller('MainController', function ($scope, $http) {
                     $scope.results = false;
                 }
                 else {
+                    $scope.results = true;
                     $scope.artists = [];
                     for (var _i = 0, artists_1 = artists; _i < artists_1.length; _i++) {
                         var artist = artists_1[_i];
-                        var imageUrl = void 0;
-                        if (artist.images.length > 0) {
-                            imageUrl = artist.images[0].url;
-                        }
-                        else {
-                            imageUrl = "../images/nopicture.png";
-                        }
-                        $scope.artists.push({
-                            name: artist.name,
-                            id: artist.id,
-                            imageUrl: imageUrl
-                        });
+                        $scope.artists.push(toSimpleArtist(artist));
                     }
                 }
             }, function errorCallback(response) {
@@ -61,10 +50,24 @@ app.controller('MainController', function ($scope, $http) {
             $scope.searchText = null;
         }
     };
+    function toSimpleArtist(artist) {
+        var imageUrl;
+        if (artist.images.length > 0) {
+            imageUrl = artist.images[0].url;
+        }
+        else {
+            imageUrl = "../images/nopicture.png";
+        }
+        return {
+            name: artist.name,
+            id: artist.id,
+            imageUrl: imageUrl
+        };
+    }
+    ;
     $scope.clickArtist = function (name, id) {
         $scope.textResultsTitle = name.toUpperCase() + " ALBUMS";
         $scope.results = false;
-        $scope.resultsAlbums = true;
         var settings = {
             method: "GET",
             url: "https://api.spotify.com/v1/artists/" + id + "/albums",
@@ -86,24 +89,29 @@ app.controller('MainController', function ($scope, $http) {
                 $scope.noMatches = true;
             }
             else {
+                $scope.resultsAlbums = true;
                 $scope.albums = [];
                 for (var _i = 0, albums_1 = albums; _i < albums_1.length; _i++) {
                     var album = albums_1[_i];
-                    var imageUrl = void 0;
-                    if (album.images.length > 0) {
-                        imageUrl = album.images[0].url;
-                    }
-                    else {
-                        imageUrl = "../images/nopicture.png";
-                    }
-                    $scope.albums.push({
-                        name: album.name,
-                        imageUrl: imageUrl
-                    });
+                    $scope.albums.push(toSimpleAlbum(album));
                 }
             }
         }, function errorCallback(response) {
             console.error("Call failed:", response);
         });
     };
+    function toSimpleAlbum(album) {
+        var imageUrl;
+        if (album.images.length > 0) {
+            imageUrl = album.images[0].url;
+        }
+        else {
+            imageUrl = "../images/nopicture.png";
+        }
+        return {
+            name: album.name,
+            imageUrl: imageUrl
+        };
+    }
+    ;
 });
