@@ -167,8 +167,6 @@ $scope.clickArtist = function(name, id) {
     console.log("Response:", response);
 
 
-    // ***** OPTION 1: GET ALBUMS WITH LOOP ***** //
-
     let albums = response.data.items;
 
 
